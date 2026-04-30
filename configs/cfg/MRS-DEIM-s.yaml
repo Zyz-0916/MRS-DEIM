@@ -1,0 +1,92 @@
+backbone:
+  - [-1, StemBlock, [16, 16, True]] 
+  - [-1, HG_Stage, [16, 64, 1, 3, False, False, 3, True, 'se']] 
+  - [-1, HG_Stage, [32, 256, 1, 3, True, False, 3, True, 'se']] 
+  - [-1, HG_Stage, [64, 512, 2, 3, True, True, 5, True, 'se']]  
+  - [-1, HG_Stage, [128, 1024, 1, 3, True, True, 5, True, 'se']] 
+
+encoder:
+ 
+  - [2, ConvNormLayer_fuse, [256, 1, 1]] 
+  - [3, ConvNormLayer_fuse, [256, 1, 1]] 
+  - [4, ConvNormLayer_fuse, [256, 1, 1]] 
+
+  - [-1, TransformerEncoderBlock, [8, 1024, 0.1, "relu", 10000, False]] # 8-P5/32
+
+  - [[8, 6, 5], FocusFeature, [[3, 5, 7]]] 
+  - [-1, ConvNormLayer_fuse, [256, 3, 2]] 
+  - [9, nn.Upsample, [None, 2, "nearest"]] 
+
+  - [[10, 8], Concat, []] 
+  - [-1, RGELAN, [256, 3, 0.6, 0.4]] 
+
+  - [[11, 5], Concat, []] 
+  - [-1, RGELAN, [256, 3, 0.6, 0.4]] 
+
+  - [[13, 9, 15], FocusFeature, [[3, 5]]] 
+  - [-1, ConvNormLayer_fuse, [256, 3, 2]] 
+  - [16, nn.Upsample, [None, 2, "nearest"]] 
+
+  - [[17, 13], Concat, []] 
+  - [-1, RGELAN, [256, 3, 0.6, 0.4]] 
+
+  
+  - [[18, 15], Concat, []] 
+  - [-1, RGELAN, [256, 3, 0.6, 0.4]] 
+
+decoder:
+  - [[22, 16, 20], DFINETransformer, {"feat_strides":[8, 16, 32], "hidden_dim": 256, "num_levels": 3, "num_layers": 3, "num_points": [3, 6, 3], "dim_feedforward": 1024}]
+
+DEIMCriterion:
+  weight_dict: {loss_mal: 1, loss_bbox: 6, loss_giou: 2.5, loss_fgl: 0.15, loss_ddf: 1.5}
+  adaptive_fgl:
+    enable: True
+    start_epoch: 10
+
+    target_ratio: 0.55
+
+    min_weight: 0.08
+    
+    max_weight: 0.18
+    
+    momentum: 0.9
+   
+    adjust_power: 0.5
+    
+    max_step: 0.2
+   
+    warmup_epochs: 8
+  mal_gamma_schedule:
+    enable: True
+    start_epoch: 8
+  
+    low_iou: 0.2
+    
+    high_iou: 0.8
+    
+    gamma_low: 2.0
+    
+    gamma_high: 1.1
+   
+    warmup_epochs: 6
+    
+    gamma_min: 0.9
+   
+    gamma_max: 2.2
+  dn_balance:
+    enable: True
+    start_epoch: 0
+    
+    warmup_epochs: 6
+    
+    weights: [0.6, 1.25, 1.25]
+  small_object_boost:
+    enable: True
+    
+    start_epoch: 12
+   
+    warmup_epochs: 4
+    
+    area_threshold: 0.02
+    
+    boost_factor: 1.5
