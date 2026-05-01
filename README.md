@@ -1,9 +1,9 @@
-# MRS-DEIM: Multi Receptive Refined Supervision DEIM for Underwater Object Detection
+# Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **Important Notice:** 
-This repository contains the official PyTorch implementation and dataset guidelines for the manuscript **"MRS-DEIM: Multi Receptive Refined Supervision DEIM for Underwater Object Detection"**. This manuscript is currently under review for publication in **The Visual Computer**. If you find our widely open source code, architectural designs, or experimental results helpful for your academic research or engineering projects, we strongly encourage and kindly request you to cite our manuscript.
+This repository contains the official PyTorch implementation and dataset guidelines for the manuscript **"Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection"**. This manuscript is currently under review for publication in **The Visual Computer**. If you find our widely open source code, architectural designs, or experimental results helpful for your academic research or engineering projects, we strongly encourage and kindly request you to cite our manuscript.
 
 ## Introduction
 Object detection in complex underwater environments presents significant challenges due to severe visual degradation, including turbidity, low contrast, and the prevalence of small covered targets. MRS-DEIM is a robust one stage detection framework specifically engineered for underwater perception. It achieves an optimal tradeoff between detection accuracy and computational efficiency, achieving an mAP of 82.6 percent on the URPC2020 benchmark.
@@ -16,11 +16,6 @@ To facilitate readers in replicating our experiments and evaluating the results,
 
 ## Dependencies and Requirements
 To effortlessly replicate our experiments, please ensure your system meets the following hardware and software requirements:
-*   OS: Ubuntu 20.04 or higher
-*   GPU: NVIDIA RTX 3090 or equivalent (CUDA 11.3 or higher)
-*   Python: 3.8 or higher
-*   PyTorch: 1.10.0 or higher
-
 Please install the required packages using the provided text file:
 ```bash
 pip install -r requirements.txt
