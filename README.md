@@ -9,9 +9,9 @@ Object detection in complex underwater environments presents significant challen
 
 ## Implementations of Key Algorithms
 To facilitate readers in replicating our experiments and evaluating the results, our framework introduces three core architectural improvements. You can find the specific algorithm implementations in the corresponding directories:
-*   **MRF-PAN (Multi Receptive Field Pyramid Aggregation Network):** Located in `models/mrf_pan.py`. It employs a dual stage multi kernel interaction mechanism to adaptively fuse global semantic context with local fine grained details.
-*   **RG-ELAN (Rep Ghost Efficient Layer Aggregation Network):** Located in `models/rg_elan.py`. This encoder synergizes structural reparameterization with optimized gradient paths to enhance feature discriminability in low contrast scenarios.
-*   **SO-DAL (Small Object aware Dynamic Adaptive Loss):** Located in `models/so_dal.py`. A custom loss function designed to dynamically prioritize high value and hard to detect small targets during the optimization phase.
+*   **MRF-PAN (Multi Receptive Field Pyramid Aggregation Network):** Located in `engine/mrfpan.py`. It employs a dual stage multi kernel interaction mechanism to adaptively fuse global semantic context with local fine grained details.
+*   **RG-ELAN (Rep Ghost Efficient Layer Aggregation Network):** Located in `engine/rgelan.py`. This encoder synergizes structural reparameterization with optimized gradient paths to enhance feature discriminability in low contrast scenarios.
+*   **SO-DAL (Small Object aware Dynamic Adaptive Loss):** Located in `engine/deim_criterion.py`. A custom loss function designed to dynamically prioritize high value and hard to detect small targets during the optimization phase.
 
 ## Dependencies and Requirements
 To effortlessly replicate our experiments, please ensure your system meets the following hardware and software requirements:
