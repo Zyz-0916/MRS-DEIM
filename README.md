@@ -1,6 +1,5 @@
 # Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **Important Notice:** 
 This repository contains the official PyTorch implementation and dataset guidelines for the manuscript **"Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection"**. This manuscript is currently under review for publication in **The Visual Computer**. If you find our widely open source code, architectural designs, or experimental results helpful for your academic research or engineering projects, we strongly encourage and kindly request you to cite our manuscript.
