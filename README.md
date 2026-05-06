@@ -21,12 +21,6 @@ Please install the required packages using the provided text file:
 ```bash
 pip install -r requirements.txt
 ```
-## Dependencies and Requirements
-To effortlessly replicate our experiments, please ensure your system meets the following hardware and software requirements. Please install the required packages using the provided text file:
-
-```bash
-pip install -r requirements.txt
-```
 
 ## Dataset Guidelines
 Our framework is trained and evaluated on two widely recognized public benchmarks for underwater object detection:
