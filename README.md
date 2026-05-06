@@ -21,6 +21,19 @@ Please install the required packages using the provided text file:
 ```bash
 pip install -r requirements.txt
 ```
+## Dependencies and Requirements
+To effortlessly replicate our experiments, please ensure your system meets the following hardware and software requirements. Please install the required packages using the provided text file:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Dataset Guidelines
+Our framework is trained and evaluated on two widely recognized public benchmarks for underwater object detection:
+*   **URPC2020:** The standard dataset from the Underwater Robot Professional Contest 2020.
+*   **DUO:** The large-scale Detection in Underwater Objects benchmark.
+
+Please download these datasets from their official open-source repositories and organize them according to standard YOLO/COCO format in your dataset directory before initiating the training or evaluation scripts.
 
 ## Citation
 If you use this code or find our framework helpful in your research, please kindly cite our paper currently under review at **The Visual Computer**:
