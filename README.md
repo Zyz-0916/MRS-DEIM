@@ -18,3 +18,7 @@ To effortlessly replicate our experiments, please ensure your system meets the f
 Please install the required packages using the provided text file:
 ```bash
 pip install -r requirements.txt
+@article{MRS_DEIM,
+  title={Multi Receptive Refined Supervision Framework for Robust Underwater Object Detection},
+  journal={The Visual Computer},
+}
