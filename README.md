@@ -2,8 +2,6 @@
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20046486-blue.svg)](https://doi.org/10.5281/zenodo.20046486)
 
-**Important Notice:** 
-This repository contains the official PyTorch implementation and dataset guidelines for the manuscript **"Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection"**. This manuscript is currently under review for publication in **The Visual Computer**. If you find our widely open-source code, architectural designs, or experimental results helpful for your academic research or engineering projects, we strongly encourage and kindly request you to cite our manuscript.
 
 ## Introduction
 Object detection in complex underwater environments presents significant challenges due to severe visual degradation, including turbidity, low-contrast, and the prevalence of small covered targets. MRS-DEIM is a robust one-stage detection framework specifically engineered for underwater perception. It achieves an optimal tradeoff between detection accuracy and computational efficiency, achieving an mAP of 82.6 percent on the URPC2020 benchmark.
@@ -29,12 +27,4 @@ Our framework is trained and evaluated on two widely recognized public benchmark
 
 Please download these datasets from their official open-source repositories and organize them according to standard YOLO/COCO format in your dataset directory before initiating the training or evaluation scripts.
 
-## Citation
-If you use this code or find our framework helpful in your research, please kindly cite our paper currently under review at **The Visual Computer**:
 
-```bibtex
-@article{mrs_deim_tvc,
-  title={Multi-Receptive Refined Supervision Framework for Robust Underwater Object Detection},
-  journal={The Visual Computer},
-}
-```
